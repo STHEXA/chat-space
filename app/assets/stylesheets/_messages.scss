@@ -92,3 +92,36 @@
     margin-bottom: 40px;
   }
 }
+
+.messages-container {
+  float: right;
+  height: calc(100vh - 190px);
+  width: calc(100vw - 300px);
+  background-color: #fafafa;
+  
+  &__message {
+    margin-left: 40px;
+    &--first {
+      height: 126px;
+      margin-top: 46px;
+      margin-left: 40px;
+    }
+  }
+  &__name {
+    display: inline;
+    font-weight: bold;
+    font-size: 16px;
+    color: #434A54;
+  }
+  &__timestump {
+    display: inline;
+    margin-left: 10px;
+    color: #999999;
+    font-size: 12px;
+  }
+  &__user-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #434A54;
+  }
+}
