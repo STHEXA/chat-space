@@ -125,3 +125,40 @@
     color: #434A54;
   }
 }
+
+.form-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  height: 90px;
+  width: calc(100vw - 300px);
+  background-color: #ddd;
+  form {
+    height: 50px;
+    width: calc(100vw - 380px);
+    position: relative;
+  }
+  &__message {
+    border-style: none;
+    height: 100%;
+    width: 88%;
+  }
+  label {
+    position: absolute;
+    line-height: 50px;
+    top: 10%;
+    right: 13%;
+  }
+  #form-container__image {
+    display: none;
+  }
+  &__btn {
+    color: #ffffff;
+    background-color: #38AEF0;
+    height: 100%;
+    border-style: none;
+    width: 10%;
+    float: right;
+  } 
+}
