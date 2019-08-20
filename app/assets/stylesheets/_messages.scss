@@ -3,3 +3,29 @@
   color: #ffffff; 
   text-align: center;
 }
+
+.header-container {
+  background-color: #253141;
+  height: 101px;
+  width: 300px;
+  float: left;
+  &__user-name {
+    display: inline;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 101px;
+    margin-left: 20px; 
+  }
+  &__new-group-icon {
+    color: #ffffff;
+    float: right;
+    line-height: 101px;
+  }
+  &__edit-icon {
+    color: #ffffff;
+    float: right;
+    line-height: 101px;
+    margin-right: 20px;
+  }
+}
