@@ -65,5 +65,30 @@
     color: #38aef0;
   }
 }
+}
 
+.side-container {
+  height: calc(100vh - 100px);
+  width: 300px;
+  background-color: #2f3e51;
+  float: left;
+  p {
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  &__group {
+    height: 71px;
+    &--first {
+      padding-top: 20px;
+    }
+  }
+  &__name {
+    font-size: 15px; 
+    margin-bottom: 5px;
+  }
+  &__message {
+    font-size: 11px;
+    margin-bottom: 40px;
+  }
 }
