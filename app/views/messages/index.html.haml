@@ -1,0 +1,25 @@
+%body
+  = render partial: 'layouts/info-bar'
+  = render partial: 'layouts/header'
+  .group-container
+    %p.group-container__name test-group
+    =link_to "#", class: "group-container__edit-btn" do
+      %p Edit
+    %p.group-container__member Member: test
+  = render partial: 'layouts/side-container'
+  .messages-container
+    .messages-container__message--first
+      %p.messages-container__name test-user
+      %p.messages-container__timestump 2019/08/08(Thu) 18:04:52
+      %p.messages-container__user-message ハロー！
+    .messages-container__message
+      %p.messages-container__name test2-user
+      %p.messages-container__timestump 2019/08/08(Thu) 18:04:52
+      %p.messages-container__user-message こんにちは！
+  .form-container
+    %form{action: "#"}
+      %input.form-container__message{placeholder: " type a message", type: "text"}/ 
+      %label{for: "form-container__image"}
+        %i.far.fa-image.fa-2x
+        %input#form-container__image{type: "file"}
+      %input.form-container__btn{type: "submit", value: "Send"}/

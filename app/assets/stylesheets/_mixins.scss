@@ -1,0 +1,12 @@
+@mixin info-bar {
+  background-color: $aoiro;
+  color: $shiro; 
+  text-align: center;
+}
+
+@mixin flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
