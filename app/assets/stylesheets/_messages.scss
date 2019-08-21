@@ -125,9 +125,7 @@
 }
 
 .form-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-container;
   float: left;
   height: 90px;
   width: calc(100vw - 300px);
