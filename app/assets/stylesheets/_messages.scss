@@ -4,7 +4,7 @@
 
 .header-container {
   background-color: #253141;
-  height: 101px;
+  height: $header-height;
   width: 300px;
   float: left;
   &__user-name {
@@ -12,18 +12,18 @@
     color: $shiro;
     font-size: 16px;
     font-weight: bold;
-    line-height: 101px;
+    line-height: $header-height;
     margin-left: 20px; 
   }
   &__new-group-icon {
     color: $shiro;
     float: right;
-    line-height: 101px;
+    line-height: $header-height;
   }
   &__edit-icon {
     color: $shiro;
     float: right;
-    line-height: 101px;
+    line-height: $header-height;
     margin-right: 20px;
   }
 }
