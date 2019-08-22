@@ -1,1 +1,3 @@
-.info-bar sample
+.info-bar
+  - flash.each do |key, value|
+    = content_tag :div, value, class: key
