@@ -1,11 +1,11 @@
 %body
   = render partial: 'layouts/header'
+  = render partial: 'layouts/side-container'
   .group-container
     %p.group-container__name test-group
     =link_to "#", class: "group-container__edit-btn" do
       %p Edit
     %p.group-container__member Member: test
-  = render partial: 'layouts/side-container'
   .messages-container
     .messages-container__message--first
       %p.messages-container__name test-user
