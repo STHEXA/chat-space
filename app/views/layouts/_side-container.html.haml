@@ -1,10 +1,9 @@
 .side-container
-  .side-container__group--first
-    %p.side-container__name test-group
-    %p.side-container__message 頑張るぞ！
-  .side-container__group
-    %p.side-container__name sample-group
-    %p.side-container__message Hello!
-  .side-container__group
-    %p.side-container__name example
-    %p.side-container__message まだメッセージがありません
+  - current_user.groups.each do |group|
+    = link_to '#' do
+      .side-container__group--first
+        %p.side-container__name 
+          = group.name
+        %p.side-container__message
+          まだメッセージがありません
+      
