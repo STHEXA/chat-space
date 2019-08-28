@@ -87,36 +87,35 @@
   }
 }
 
-.messages-container {
-  float: right;
+.messages {
+  background-color: #FAFAFA;
+  box-sizing: border-box;
+  padding: 46px 40px 0;
   height: calc(100vh - 190px);
   width: calc(100vw - 300px);
-  background-color: #fafafa;
-  
-  &__message {
-    margin-left: $space40;
-    &--first {
-      height: 126px;
-      margin-top: 46px;
-      margin-left: $space40;
+  float: right;
+  .message {
+    .upper-message {
+      display: flex;
+      &__user-name {
+        color: #434A54;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__date {
+        color: $haiiro;
+        font-size: 12px;
+        padding-left: 10px;
+      }
     }
-  }
-  &__name {
-    display: inline;
-    font-weight: bold;
-    font-size: 16px;
-    color: #434A54;
-  }
-  &__timestump {
-    display: inline;
-    margin-left: 10px;
-    color: $haiiro;
-    font-size: 12px;
-  }
-  &__user-message {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #434A54;
+    .lower-message {
+      margin-top: 10px;
+      &__content {
+        color: #434A54;
+        font-size: 14px;
+        margin-bottom: 40px;
+      }
+    }
   }
 }
 
