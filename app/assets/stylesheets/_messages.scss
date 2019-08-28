@@ -139,10 +139,10 @@
   label {
     position: absolute;
     line-height: 50px;
-    top: 10%;
+    font-size: 20px;
     right: 13%;
   }
-  #form-container__image {
+  .hidden {
     display: none;
   }
   &__btn {
