@@ -1,5 +1,9 @@
 .group-container
-  %p.group-container__name test-group
+  %p.group-container__name 
+    = @group.name
   = link_to edit_group_path(@group), class: "group-container__edit-btn" do
     %p Edit
-  %p.group-container__member Member: test
+  %p.group-container__member 
+    Member:
+    - @group.users.each do |user|
+      = user.name
