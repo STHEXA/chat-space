@@ -90,10 +90,14 @@
 .messages {
   background-color: #FAFAFA;
   box-sizing: border-box;
+  overflow: scroll;
   padding: 46px 40px 0;
   height: calc(100vh - 190px);
   width: calc(100vw - 300px);
   float: right;
+  &::-webkit-scrollbar{
+    display:none;
+  }
   .message {
     .upper-message {
       display: flex;
@@ -121,6 +125,7 @@
 
 .form-container{
   @include flex-container;
+  box-sizing: border-box;
   float: left;
   height: 90px;
   width: calc(100vw - 300px);
