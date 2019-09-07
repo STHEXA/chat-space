@@ -1,12 +1,7 @@
-.info-bar {
-  @include info-bar;
-}
-
 .header-container {
   background-color: #253141;
   height: $header-height;
   width: 300px;
-  float: left;
   &__user-name {
     display: inline;
     color: $shiro;
@@ -31,6 +26,7 @@
 .group-container {
   border-bottom: solid 1px #eeeeee;
   width: calc(100vw - 300px);
+  margin-top: -100px;
   margin-left: 300px;
   height: 100px;
   position: relative;
@@ -52,7 +48,7 @@
 &__edit-btn {
   border: solid 1px $aoiro;
   height: 40px;
-  margin-top: 28px;
+  margin-top: -68px;
   margin-right: $space40;
   padding-left: 20px;
   padding-right: 20px;
@@ -91,41 +87,45 @@
   }
 }
 
-.messages-container {
-  float: right;
+.messages {
+  background-color: #FAFAFA;
+  box-sizing: border-box;
+  overflow: scroll;
+  padding: 46px 40px 0;
   height: calc(100vh - 190px);
   width: calc(100vw - 300px);
-  background-color: #fafafa;
-  
-  &__message {
-    margin-left: $space40;
-    &--first {
-      height: 126px;
-      margin-top: 46px;
-      margin-left: $space40;
+  float: right;
+  &::-webkit-scrollbar{
+    display:none;
+  }
+  .message {
+    .upper-message {
+      display: flex;
+      &__user-name {
+        color: #434A54;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__date {
+        color: $haiiro;
+        font-size: 12px;
+        padding-left: 10px;
+      }
     }
-  }
-  &__name {
-    display: inline;
-    font-weight: bold;
-    font-size: 16px;
-    color: #434A54;
-  }
-  &__timestump {
-    display: inline;
-    margin-left: 10px;
-    color: $haiiro;
-    font-size: 12px;
-  }
-  &__user-message {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #434A54;
+    .lower-message {
+      margin-top: 10px;
+      &__content {
+        color: #434A54;
+        font-size: 14px;
+        margin-bottom: 40px;
+      }
+    }
   }
 }
 
 .form-container{
   @include flex-container;
+  box-sizing: border-box;
   float: left;
   height: 90px;
   width: calc(100vw - 300px);
@@ -143,10 +143,10 @@
   label {
     position: absolute;
     line-height: 50px;
-    top: 10%;
+    font-size: 20px;
     right: 13%;
   }
-  #form-container__image {
+  .hidden {
     display: none;
   }
   &__btn {
