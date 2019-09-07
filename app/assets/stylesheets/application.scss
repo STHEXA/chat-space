@@ -1,8 +1,8 @@
-@import "./reset";
-@import "./variable";
-@import "./mixins";
-@import "./user";
-@import "./messages";
+@import "reset";
+@import "variable";
 @import "config/colors";
 @import "modules/flash";
 @import "modules/group";
+@import "mixins";
+@import "user";
+@import "messages";
