@@ -72,10 +72,11 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html)
       $('#message_content').val('');
+      $('.form-container__btn').removeAttr('disabled');
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
     .fail(function(){
-      alert(erorr);
+      alert("erorr");
     })
   });
 })
