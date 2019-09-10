@@ -71,7 +71,8 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('#message_content').val('')
+      $('#message_content').val('');
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
     .fail(function(){
       alert(erorr);
