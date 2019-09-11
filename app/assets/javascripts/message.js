@@ -1,8 +1,8 @@
 $(function(){
 
   function buildHTML(message){
-    var content = message.content ? `<p class='lower-message__content'> ${message.content} </p>` : ``;
-    var image = message.image ? `<img class="lower-message__image" src="${message.image}" alt="image" />` : ``;
+    var content = message.content ? `<p class='lower-message__content'> ${message.content} </p>` : '';
+    var image = message.image ? `<img class="lower-message__image" src="${message.image}" alt="image" />` : '';
     
     var html = `<div class='message'>
                   <div class='upper-message'>
@@ -35,8 +35,8 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.messages').append(html)
-      $('#message_content').val('');
+      $('.messages').append(html);
+      $('#new_message')[0].reset();
       $('.form-container__btn').removeAttr('disabled');
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     })
