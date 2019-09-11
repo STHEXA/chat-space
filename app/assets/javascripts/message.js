@@ -1,59 +1,24 @@
 $(function(){
 
   function buildHTML(message){
-    if( (message.content　!= "") && (message.image != null) ){
-      var html = `<div class='message'>
-                    <div class='upper-message'>
-                      <div class='upper-message__user-name'>
-                        ${message.user_name}
-                      </div>
-                      <div class='upper-message__date'>
-                        ${message.created_at}
-                      </div>
+    var content = message.content ? `<p class='lower-message__content'> ${message.content} </p>` : ``;
+    var image = message.image ? `<img class="lower-message__image" src="${message.image}" alt="image" />` : ``;
+    
+    var html = `<div class='message'>
+                  <div class='upper-message'>
+                    <div class='upper-message__user-name'>
+                      ${message.user_name}
                     </div>
-                    <div class='lower-message'>
-                      <p class='lower-message__content'>
-                        ${message.content}
-                      </p>
-                      <img class="lower-message__image" src="${message.image}" alt="Sample" />
+                    <div class='upper-message__date'>
+                      ${message.created_at}
                     </div>
-                  </div>`
-      return html;
-    }else if((message.content　!= "") && (message.image == null)) {
-      var html = `<div class='message'>
-                    <div class='upper-message'>
-                      <div class='upper-message__user-name'>
-                        ${message.user_name}
-                      </div>
-                      <div class='upper-message__date'>
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class='lower-message'>
-                      <p class='lower-message__content'>
-                        ${message.content}
-                      </p>
-                    </div>
-                  </div>`
-      return html;
-    }else if((message.content　== "") && (message.image != null)) {
-      var html = `<div class='message'>
-                    <div class='upper-message'>
-                      <div class='upper-message__user-name'>
-                        ${message.user_name}
-                      </div>
-                      <div class='upper-message__date'>
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class='lower-message'>
-                      <p class='lower-message__content'>
-                      <img class="lower-message__image" src="${message.image}" alt="Sample" />
-                      </p>
-                    </div>
-                  </div>`
-      return html;
-    }
+                  </div>
+                  <div class='lower-message'>
+                      ${content}
+                      ${image}
+                  </div>
+                </div>`
+    return html;
   };
 
   $('#new_message').on('submit', function(e){
