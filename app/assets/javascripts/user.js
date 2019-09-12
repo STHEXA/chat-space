@@ -1,20 +1,29 @@
 $(function(){
 
-  $('#edit_group_1').on('keyup', function(e){
-    e.preventDefault();
-    var formData = new FormData(this);
-    var href = 'http://localhost:3000/users';
+  var user_list = $("#user-search-result");
+  function appendUser(user){
+    
+    var html = `<div class="chat-group-user clearfix">
+                  <p class="chat-group-user__name">${user.name}</p>
+                  <div class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加</div>
+                </div>`
+    user_list.append(html);
+  };
+
+  $('#user-search-field').on('keyup', function(){
+    var input = $("#user-search-field").val();
     
     $.ajax({
-      url: href,
+      url: '/users',
       type: 'GET',
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
+      data: { keyword: input },
+      dataType: 'json'
     })
-    .done(function(data){
-      
+    .done(function(users) {
+      $("#user-search-result").empty();
+      users.forEach(function(user){
+          appendUser(user);
+      });
     })
     
   });
