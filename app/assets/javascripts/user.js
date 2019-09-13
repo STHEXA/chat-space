@@ -31,8 +31,9 @@ $(function(){
     
   });
 
-  $(document).on("click",".user-search-add.chat-group-user__btn.chat-group-user__btn--add",function(){
-    console.log(document);
+  $(document).on("click",".user-search-add.chat-group-user__btn.chat-group-user__btn--add",function(e){
+    var selectUser = $(this).parent();
+    $(selectUser).remove();
   });
 
 });
