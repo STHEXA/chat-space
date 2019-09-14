@@ -12,10 +12,6 @@ $(function(){
 
   var member_list = $('#member-result');
   function appendMember(member){
-    console.log($(member).attr('data-user-id'));
-    console.log($(member).attr('data-user-name'));
-
-    
     var html = `<div class='chat-group-user'>
                   <input name='group[user_ids][]' type='hidden' value='${$(member).attr('data-user-id')}'>
                   <p class='chat-group-user__name'>${$(member).attr('data-user-name')}</p>
@@ -49,6 +45,11 @@ $(function(){
     var selectUser = $(this).parent();
     $(selectUser).remove();
     appendMember(this);
+  });
+
+  $(document).on("click",'.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn',function(){
+    var selectUser = $(this).parent();
+    $(selectUser).remove();
   });
 
 
