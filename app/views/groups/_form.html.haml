@@ -23,12 +23,7 @@
     - if @group.users.length > 1
       - @group.users.each_with_index do |user, index|
         - if index == @group.users.length - 1
-          .chat-group-form__field--right
-            .chat-group-user
-              %input{name: "group[user_ids][]", type: "hidden", value: "#{user.id}"}/
-              %p.chat-group-user__name="#{user.name}"
-              .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
-            #member-result
+          = render partial: 'partsLastMemder', locals: { user: user }
         - else
           .chat-group-form__field--right
             .chat-group-user
