@@ -41,13 +41,13 @@ $(function(){
     
   });
 
-  $(document).on("click",'.user-search-add.chat-group-user__btn.chat-group-user__btn--add',function(){
+  $(document).on("click",'.chat-group-user__btn--add',function(){
     var selectUser = $(this).parent();
     $(selectUser).remove();
     appendMember(this);
   });
 
-  $(document).on("click",'.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn',function(){
+  $(document).on("click",'.js-remove-btn',function(){
     var selectUser = $(this).parent();
     $(selectUser).remove();
   });
