@@ -45,29 +45,33 @@ $(function(){
     })
   });
 
-  var reloadMessages = function() {
+  if(document.URL.match(/messages/)){
+    var reloadMessages = function() {
 
-    last_message_id = $('.messages').data('id');
+      last_message_id = $('.message:last').data('id');
+      console.log(last_message_id);
+      $.ajax({
+        url: 'api/messages',
+        type: 'GET',
+        dataType: 'json',
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
 
-    $.ajax({
-      url: 'api/messages',
-      type: 'GET',
-      dataType: 'json',
-      data: {id: last_message_id}
-    })
-    .done(function(messages) {
-
-      var insertHTML = '';
-      messages.forEach(function(message) {
-        insertHTML = buildHTML(message);
+        var insertHTML = '';
+        messages.forEach(function(message) {
+          console.log(message);
+          insertHTML = buildHTML(message);
+        });
         $('.messages').append(insertHTML);
-      });
-      
-    })
-    .fail(function() {
-      console.log('error');
-    });
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
 
+      })
+      .fail(function() {
+        alert("自動更新に失敗しました。");
+      });
+
+    };
+    setInterval(reloadMessages, 5000);
   };
-  setInterval(reloadMessages, 5000);
 });
