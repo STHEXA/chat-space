@@ -61,7 +61,6 @@ $(function(){
           insertHTML = buildHTML(message);
         });
         $('.messages').append(insertHTML);
-        console.log(insertHTML);
         if (insertHTML != '') {
           $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
         };
