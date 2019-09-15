@@ -4,7 +4,7 @@ $(function(){
     var content = message.content ? `<p class='lower-message__content'> ${message.content} </p>` : '';
     var image = message.image ? `<img class="lower-message__image" src="${message.image}" alt="image" />` : '';
     
-    var html = `<div class='message'>
+    var html = `<div class='message' data-id= '${message.id}'>
                   <div class='upper-message'>
                     <div class='upper-message__user-name'>
                       ${message.user_name}
@@ -51,17 +51,23 @@ $(function(){
 
     $.ajax({
       url: 'api/messages',
-      type: 'get',
+      type: 'GET',
       dataType: 'json',
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log('success');
+
+      var insertHTML = '';
+      messages.forEach(function(message) {
+        insertHTML = buildHTML(message);
+        $('.messages').append(insertHTML);
+      });
+      
     })
     .fail(function() {
       console.log('error');
     });
-    
+
   };
 
 })
