@@ -5,7 +5,7 @@ lock '3.11.1'
 # Capistranoのログの表示に利用する
 set :application, 'chat-space''
 
-set :repo_url, 'git@github.com:STHEXA/chat-space.git'
+set :repo_url, "git@github.com:STHEXA/chat-space.git"
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
 set :rbenv_type, :user
